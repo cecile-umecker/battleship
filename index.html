@@ -1,0 +1,371 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+
+<!-- Les Meta Tags -->
+<meta charset="utf-8">
+<meta name="msapplication-tap-highlight" content="no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Référencement -->
+<meta name="description" content="Feu à volonté !!! Dispose 4 navires sur ton plateau de jeu, l'ordinateur fait de même. Chacun votre tour, essayez de deviner l'emplacement des navires de combat de l'adversaire. Le premier à avoir coulé les bateaux de l'autre gagne la partie.">
+<meta name="keywords" content="discord, battleship, projet, github, html, css" />
+<meta name="author" content="Cécile Umecker / Pierre Schaefer" />
+
+<!-- Partage Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Web@cadémie - Battleship">
+<meta property="og:url" content="index.html">
+<meta property="og:image" content="#">
+<meta property="og:description" content="Feu à volonté !!! Dispose 4 navires sur ton plateau de jeu, l'ordinateur fait de même. Chacun votre tour, essayez de deviner l'emplacement des navires de combat de l'adversaire. Le premier à avoir coulé les bateaux de l'autre gagne la partie.">
+
+<!-- Partage Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web@cadémie - Battleship">
+<meta name="twitter:description" content="Feu à volonté !!! Dispose 4 navires sur ton plateau de jeu, l'ordinateur fait de même. Chacun votre tour, essayez de deviner l'emplacement des navires de combat de l'adversaire. Le premier à avoir coulé les bateaux de l'autre gagne la partie.">
+<meta name="twitter:image:src" content="#">
+
+<!-- Nom de la page -->
+<title>Web@cadémie - Battleship</title>
+
+<!-- Début des liens vers les feuilles CSS -->
+<link href="css/normalize.min.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/main.css" rel="stylesheet" type="text/css" media="all">
+<link href="https://cdn.jsdelivr.net/gh/MichaelGillett/FluentFTW/dist/css/fluent.css" rel="stylesheet" type="text/css" media="all" />
+<link href="https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans" rel="stylesheet" type="text/css" media="all" />
+
+<!-- Favicon (icone site aperçu)  -->
+<link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+<link rel="icon" href="./favicon/favicon.png" type="image/png">
+<link rel="icon" sizes="32x32" href="./favicon/favicon-32.png" type="image/png">
+<link rel="icon" sizes="64x64" href="./favicon/favicon-64.png" type="image/png">
+<link rel="icon" sizes="96x96" href="./favicon/favicon-96.png" type="image/png">
+<link rel="icon" sizes="196x196" href="./favicon/favicon-196.png" type="image/png">
+<link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-touch-icon-144x144.png">
+<meta name="msapplication-TileImage" content="favicon/favicon-144.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+
+</head>
+
+<body>
+
+    <div class="acrylic">
+        <h2>My Battleship</h2>
+        <div class="game-info"></div>
+
+        <form id="selectFirstPlayer">
+            <!-- <div>
+                <label>Qui doit commencer la partie ?</label>
+                <select>
+                    <option value="human " id="Choice1" name="start" value="human">Humain</option>
+                    <option value="random" id="Choice2" name="start" value="random">Aléatoire</option>
+                    <option value="computer" id="Choice3" name="start" value="computer">Ordinateur</option>
+                </select>
+            </div> -->
+        </form>
+    </div>
+
+    <div class="main-container">
+        <div class="card">
+            <div class="left column">
+
+                <div class="fleet">
+                    <div class="ship battleship active"></div>
+                    <div class="ship destroyer"></div>
+                    <div class="ship submarine"></div>
+                    <div class="ship small-ship"></div>
+                </div>
+
+                <div class="mini-grid">
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="board right">
+                <div class="main-grid">
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- <div class="controls">
+            <div class="scores">
+                <div>
+                    <span>Player</span>
+                    <span id="playerOne">0</span>
+                </div>
+                <div>
+                    <span>Cécile</span>
+                    <span id="playerTwo">0</span>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="confirm">
+            <div class="card">
+                <span class="message-container"></span>
+                <div class="btn-container">
+                    <span class="btn confirm-cancel">Annuler</span>
+                    <span class="btn confirm-ok">Ok</span>
+                </div>
+            </div>
+        </div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+
+    <script src="js/vendor/lodash.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/computer.js"></script>
+    <script src="js/shipFactory.js"></script>
+    <script src="js/game.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MichaelGillett/FluentFTW/dist/js/fluent.js"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
