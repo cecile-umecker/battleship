@@ -1,0 +1,340 @@
+* {
+    font-family: "Inconsolata, Roboto Mono", monospace;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.acrylic {
+    height: 110px;
+}
+
+body {
+    text-align: center;
+    animation: gradient 15s ease infinite;
+    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+    background-size: 400% 400%;
+    font-size: 18px;
+}
+
+.circle1 {
+    right: 15%;
+    top: 5%;
+    opacity: 0.33;
+  }
+  
+  .circle1, .circle2 {
+    background: #fff;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    border-radius: 50%;
+    height: 20rem;
+    position: absolute;
+    width: 20rem;
+    opacity: 0.33;
+    z-index: -1;
+  }
+  
+  .circle2 {
+    bottom: 5%;
+    left: 10%;
+    opacity: 0.33;
+  }
+  
+  .card {
+    background: linear-gradient(to left top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    border-radius: 1rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem -2em;
+    padding: 2rem;
+    opacity: 0.65;
+  }
+  
+  .dashboard {
+    align-items: center;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center
+  }
+  
+  .glass {
+    background: #fff;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+    display: flex;
+    min-height: 80vh;
+    z-index: 2;
+  }
+
+section {
+    position: relative;
+    left: 100px;
+  }
+  
+  h2 { 
+    padding-top: 0%;
+    font-size: 52px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #dc1414,
+      2px 2px 0px #DC143C,
+      3px 3px 0px #DC143C,
+      4px 4px 0px #DC143C;
+  }
+
+#can0{
+     position: absolute  ;
+}
+
+#can1{
+    position: absolute;
+}
+
+#can2{
+    position: relative  ;
+}
+
+#imgR, #imgJ{
+    display: none;
+}
+
+@keyframes gradient {
+    0%, 100% {
+        background-position: 0 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+}
+
+.main-container {
+    width: 970px;
+    margin:auto;
+    border: 0px;
+}
+
+.main-container h1 {
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.column {
+    box-sizing: border-box;
+    width: 350px;
+}
+
+.board {
+    box-sizing: border-box;
+    width: 600px;
+    height: 600px;
+    overflow: hidden;    
+}
+
+.main-grid, .mini-grid {
+    width: 600px;
+    position: relative;
+}
+
+.main-grid div, .mini-grid div {
+    box-sizing: border-box;
+}
+
+.row {
+    border: 0;
+    height: 60px;
+}
+
+.cell {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(66, 66, 66);
+}
+
+.mini-grid {
+    transform: scale(0.5) translateX(-250px);
+    margin-top: -150px;
+}
+
+ select {
+    color:rgba(48, 48, 48, 0.836);
+    outline: none !important;
+}
+
+.select-style {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff;
+    position: relative;
+    outline: none;
+}
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+.select-style:after {
+    top: 50%;
+    left: 85%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 5px;
+    margin-top: -2px;
+    z-index: 100;
+    outline: none;
+}
+.select-style select:focus {
+    outline: none;
+}
+
+.game-info {
+    overflow: auto;
+    width: 100%;
+    padding-top: 1em;
+    height: 60px;
+    text-align: center;
+}
+
+#confirm {
+    text-align: center;
+    display: none;
+    color: black;
+}
+
+#selectFirstPlayer {
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.btn-container {
+    display: inline-block;
+}
+
+.btn-container .btn {
+    font-family: "Roboto Mono", monospace;
+    border-radius: 10px;
+    position: relative;
+    border: none;
+    font-size: 13px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn-container .confirm-ok {
+    background-color: #016ABC;
+}
+
+.btn-container .confirm-ok:hover {
+    background: #3191e0;
+}
+
+.btn-container .confirm-cancel {
+    background-color: red;
+}
+
+.btn-container .confirm-cancel:hover {
+    background: #e58282;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+  }
+  
+  .controls > .scores {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .controls > .scores > div {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.75em;
+    margin: 0.5em;
+  
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.25em;
+  }
+  
+  .controls > .scores > div > span:last-child {
+    font-size: 1.5em;
+  }
+
+.fleet {
+    text-align: center;
+}
+
+.ship {
+    background-image: url('../img/battleship-target-3.gif');
+    background-size: 100% auto;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.ship.battleship {
+    background-position: 0 0 ;
+}
+
+.ship.destroyer {
+    background-position: 0 100px;
+}
+
+.ship.submarine {
+    background-position: 0 153px;
+}
+
+.ship.small-ship {
+    background-position: 0 53px;
+}
+
+.ship.sunk {
+    opacity: 0.1;
+}
